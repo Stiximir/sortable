@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sortable</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Sortable</h1>
+        <input type="text" id="search" placeholder="Rechercher un héros..." />
+        <select id="pageSize">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="all">Tous</option>
+        </select>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Icon</th>
+                    <th>Name</th>
+                    <th>Full Name</th>
+                    <th>Powerstats</th>
+                    <th>Race</th>
+                    <th>Gender</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Place of Birth</th>
+                    <th>Alignment</th>
+                </tr>
+            </thead>
+            <tbody id="body">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>END</th>
+                    <th>NO MORE DATA</th>
+                    <th>END</th>
+                    <th>END</th>
+                    <th>END</th>
+                    <th>END</th>
+                    <th>END</th>
+                    <th>END</th>
+                    <th>END</th>
+                    <th>END</th>
+                </tr>
+            </tfoot>
+        </table>
+        <script type="module" src="./index.js"></script>
+    </body>
+</html>
