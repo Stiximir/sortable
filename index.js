@@ -11,6 +11,9 @@ const loadData = (heroes) => {
         row.innerHTML = `<td><img src="${hero.images.xs}" alt="${hero.name}" width="50"></td>
             <td>${hero.name}</td>
             <td>${hero.biography.fullName || "N/A"}</td>
+            <td>
+                ${Object.entries(hero.powerstats).map(([varName, value]) => `<b>${varName}:</b> ${value}`).join(", ")}
+            </td>
             <td>${hero.appearance.race || "Unknown"}</td>
             <td>${hero.appearance.gender}</td>
             <td>${hero.appearance.height[1]}</td>
@@ -20,7 +23,7 @@ const loadData = (heroes) => {
 
         htmlBody.appendChild(row);
     }
-  };
+};
   
   // Request the file with fetch, and the data will be downloaded to your browser cache.
   fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
