@@ -196,11 +196,11 @@ genderCase.addEventListener("click", (event) => {
 heightCase.addEventListener("click", (event) => {
     if (ascendingHeight == true) { 
         ascendingHeight = false; 
-        heroesTable.sort((a, b) => parseInt(a.appearance.height[1] - parseInt(b.appearance.height[1]))); 
+        heroesTable.sort((a, b) => parseInt(a.appearance.height[1] - parseInt(b.appearance.height[1]))); // Ligne a corrigé
     }
     else { 
         ascendingHeight = true; 
-        heroesTable.sort((a, b) => parseInt(b.appearance.height[1] - parseInt(a.appearance.height[1])));
+        heroesTable.sort((a, b) => parseInt(b.appearance.height[1] - parseInt(a.appearance.height[1]))); // Ligne a corrigé
     }
     loadData(heroesTable)
 })
@@ -208,11 +208,11 @@ heightCase.addEventListener("click", (event) => {
 weightCase.addEventListener("click", (event) => {
     if (ascendingWeight == true) { 
         ascendingWeight = false; 
-        heroesTable.sort((a, b) => a.appearance.weight[1].localeCompare(b.appearance.weight[1])); 
+        heroesTable.sort((a, b) => a.appearance.weight[1].localeCompare(b.appearance.weight[1]));  // Ligne a corrigé
     }
     else { 
         ascendingWeight = true; 
-        heroesTable.sort((a, b) => b.appearance.weight[1].localeCompare(a.appearance.weight[1])); 
+        heroesTable.sort((a, b) => b.appearance.weight[1].localeCompare(a.appearance.weight[1]));  // Ligne a corrigé 
     }
     loadData(heroesTable)
 })
