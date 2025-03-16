@@ -10,6 +10,7 @@ let gender
 let height
 let weight
 let alignment
+
 // This function is called only after the data has been fetched, and parsed.
 const loadData = (heroes) => {
     console.log(heroes);
@@ -123,6 +124,7 @@ const heightCase = document.getElementById("height")
 const weightCase = document.getElementById("weight")
 const placeBirthCase = document.getElementById("placeBirth")
 const alignmentCase = document.getElementById("alignment")
+const searchBar = document.getElementById("search")
 
 let ascendingName = false
 let ascendingFullName = false
@@ -133,6 +135,15 @@ let ascendingHeight = false
 let ascendingWeight = false
 let ascendingPlaceBirth = false
 let ascendingAlignment = false
+
+searchBar.addEventListener("input", (event) => {
+    const searchText = event.target.value.toLowerCase();
+    const filteredHeroes = heroesTable.filter(hero => 
+        hero.name.toLowerCase().includes(searchText) ||
+        hero.biography.fullName.toLowerCase().includes(searchText)
+    );
+    loadData(filteredHeroes);
+});
 
 nameCase.addEventListener("click", (event) => {
     if (ascendingName == true) { 
@@ -185,11 +196,11 @@ genderCase.addEventListener("click", (event) => {
 heightCase.addEventListener("click", (event) => {
     if (ascendingHeight == true) { 
         ascendingHeight = false; 
-        heroesTable.sort((a, b) => a.appearance.height[1].localeCompare(b.appearance.height[1])); 
+        heroesTable.sort((a, b) => parseInt(a.appearance.height[1] - parseInt(b.appearance.height[1]))); 
     }
     else { 
         ascendingHeight = true; 
-        heroesTable.sort((a, b) => b.appearance.height[1].localeCompare(a.appearance.height[1])); 
+        heroesTable.sort((a, b) => parseInt(b.appearance.height[1] - parseInt(a.appearance.height[1])));
     }
     loadData(heroesTable)
 })
